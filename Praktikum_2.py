@@ -24,3 +24,37 @@ print("Hasil Determinan Menggunakan NUMPY Library")
 print (np.linalg.det(DET))
 print("Hasil Determinan Menggunakan Operator Dasar")
 print (6*(-2*7 - 5*8) - 1*(4*7 - 5*2) + 1*(4*8 - -2*2))
+print("")
+
+# Tugas 3
+def cetak_matriks(matriks):
+    for row in matriks:
+        print (row)
+ 
+def pjg_matriks(matriks):
+    return len(matriks[0])
+ 
+def lbr_matriks(matriks):
+    return len(matriks)
+ 
+def transpose_matriks(mat_a):
+    temp_row = []
+    temp_mat = []
+ 
+    for i in range(0, pjg_matriks(mat_a)):
+        for j in range(0, lbr_matriks(mat_a)):
+            temp_row.append( mat_a[j][i])
+        temp_mat.append(temp_row)
+        temp_row = []
+    return temp_mat
+ 
+TRANS = [[1, 2, 3, 5], [3, 4, 5, 6], [5, 6, 7, 8]]
+
+ 
+print ("matriks_a : ")
+cetak_matriks(TRANS)
+print ("transpose matriks_a : ")
+trp_mat_a = transpose_matriks(TRANS)
+cetak_matriks(trp_mat_a)
+ 
+
